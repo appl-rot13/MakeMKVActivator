@@ -12,7 +12,7 @@ When the tool is run, MakeMKV will be launched, and the activation key downloade
 If the activation key already applied is within the expiration date, the tool will exit with MakeMKV still running.
 
 If the activation key in the forum has not been updated, the tool will NOT activate.
-In that case, please wait for the update; it may not be updated for a week.
+In that case, please wait for the update; it may not be updated for two weeks.
 
 ### Setting Program Path
 
