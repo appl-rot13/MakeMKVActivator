@@ -2,6 +2,7 @@
 namespace MakeMKVActivator
 {
     using System.Diagnostics;
+    using System.IO;
     using System.Net.Http;
     using System.Windows;
 
@@ -30,6 +31,17 @@ namespace MakeMKVActivator
         private void Activate()
         {
             // MakeMKV 開始
+            if (!File.Exists(ProgramPath))
+            {
+                this.Dispatcher.Invoke(
+                    () =>
+                    {
+                        MessageBox.Show($"File not found: '{ProgramPath}'");
+                        this.Shutdown();
+                    });
+                return;
+            }
+
             var process = Process.Start(ProgramPath);
             process.Exited += (_, _) =>
             {
